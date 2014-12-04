@@ -1,0 +1,179 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bground_color"
+    android:orientation="vertical"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="ie.nuim.cs.appkeep.Database_Home" >
+
+    <!-- Text box for equipment serial number -->
+
+    <TextView
+        android:id="@+id/tv_serial_num"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/serial_num" />
+
+    <EditText
+        android:id="@+id/et_db_serial_num"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_box"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/serial_num_hint"
+        android:padding="5dp"
+        android:textSize="15sp" />
+
+    <!-- Text box for equipment name -->
+
+    <TextView
+        android:id="@+id/tv_db_equip_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="@string/equip_name" />
+
+    <EditText
+        android:id="@+id/et_db_equip_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_box"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/equip_name"
+        android:padding="5dp"
+        android:textSize="15sp" />
+
+    <!-- Text box for equipment location -->
+
+    <TextView
+        android:id="@+id/tv_db_eqip_location"
+        android:layout_width="wrap_content"
+        android:gravity="center"
+        android:layout_height="wrap_content"
+        android:text="@string/equip_location" />
+
+    <EditText
+        android:id="@+id/et_db_eqip_location"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center"
+        android:background="@drawable/rounded_box"
+        android:ems="10"
+        android:gravity="center"
+        android:hint="@string/equip_location"
+        android:padding="5dp"
+        android:textSize="15sp" />
+
+   <!-- Allowing two buttons linking to datePickers on the same line --> 
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+        
+        <!-- Button to conect to DatePicker for date of last service -->
+        
+        <Button
+            android:id="@+id/bn_db_date_last_service"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_style"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text="@string/date_last"
+            android:textSize="15sp" />
+
+        <!-- Button to conect to DatePicker for date service due -->
+
+        <Button
+            android:id="@+id/bn_db_date_due"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="20dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="40dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_style"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text="@string/date_due"
+            android:textSize="15sp" />
+    
+    </LinearLayout>
+    
+    
+    <!-- Allowing two buttons to appear on the same line within the wrapper LinearLayout -->
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal" >
+
+        <!-- Button to input database -->
+
+        <Button
+            android:id="@+id/bn_db_input"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="20dp"
+            android:layout_marginRight="20dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginLeft="15dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_style"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text="@string/create_entry"
+            android:textSize="15sp" />
+
+        <!-- Button to edit database -->
+
+        <Button
+            android:id="@+id/bn_db_edit"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="24dp"
+            android:layout_marginEnd="24dp"
+            android:layout_marginLeft="20dp"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="20dp"
+            android:layout_weight="1"
+            android:background="@drawable/button_style"
+            android:paddingLeft="4dp"
+            android:paddingRight="4dp"
+            android:text="@string/edit_entry"
+            android:textSize="15sp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/bn_db_set_reminder"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="24dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginRight="24dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="20dp"
+        android:gravity="center"
+        android:layout_gravity="center"
+        android:background="@drawable/button_style"
+        android:text="@string/set_reminder" />
+
+</LinearLayout>

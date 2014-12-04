@@ -1,0 +1,24 @@
+package ie.nuim.cs.appkeep;
+
+//dealing with all database implementation
+
+public class Equipment123 {
+	
+	//setting up database variables (final as they will not be changing)
+	public static final String KEY_SERIAL_NUM = "_id";
+	public static final String KEY_EQUIP_NAME = "equipment_name";
+	public static final String KEY_LOCATION = "location";
+	public static final String KEY_LAST_DATE = "service_last_date";
+	public static final String KEY_DUE_DATE = "service_due_date";
+	
+	//Setting up the Database name
+	
+	private static final String DATABASE_NAME = "equipment";
+	private static final String DATABASE_TABLE = "full_list";
+	private static final int DATABASE_VERSION = 1;
+	
+	
+	
+	
+
+}

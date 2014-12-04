@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  Setting up the layout for the database view -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:orientation="vertical"
+    	android:layout_width="match_parent"
+        android:layout_height="match_parent">
+   
+
+    <TableLayout 
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:scrollbars="horizontal|vertical" >
+
+        <TableRow>
+              <TextView  android:text="@string/serial_num" 	 android:layout_width="match_parent"   android:layout_height="match_parent"/>
+              <TextView  android:text="@string/equip_name" 	 android:layout_width="match_parent"   android:layout_height="match_parent"/>
+              <TextView  android:text="@string/equip_location" 	android:layout_width="match_parent"   android:layout_height="match_parent"/>
+              <TextView  android:text="@string/date_last" 	 android:layout_width="match_parent"   android:layout_height="match_parent"/>
+              <TextView  android:text="@string/date_due" 	 android:layout_width="match_parent"   android:layout_height="match_parent"/>
+            
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tableRow5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+        </TableRow>
+
+    </TableLayout>
+
+</LinearLayout>

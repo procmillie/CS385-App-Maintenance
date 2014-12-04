@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">AppKeep</string>
+    <string name="hello_world">Hello world!</string>
+    <string name="action_settings">Settings</string>
+    
+    <!-- Strings for DATABASE INPUT screen -->
+    <!-- Setting up background color and strings for text hints and text box titles that let users know what data to enter -->
+    
+    <color name="bground_color">#4585E6</color>
+    <color name="editText_bground">#D3E2F9</color>
+    <string name="serial_num">Serial number</string>
+    <string name="serial_num_hint">exampleXX111</string>
+    <string name="equip_name">Equipment name</string>
+    <string name="equip_location">Location</string>
+    <string name="date_last">Last service</string>
+    <string name="date_due">Service due</string>
+    <string name="set_reminder">Set Reminder</string>
+    
+    
+    <!--  Button strings to input and edit database entries. Colors used: 
+    #FF9147 - pale gold
+    #FF8533 - dark gold
+    A34719 - brown-->
+    <string name="create_entry">Create entry</string>
+    <string name="edit_entry">Edit entry</string>
+    <color name="bn_color">#FF9147</color>
+    <color name="bn_color2">#FFC985</color>
+    <color name="bn_color3">#FF0000</color>
+    <color name="bn_color4">#FF3333</color>
+    <color name="bn_color5">#FFC985</color>
+    <color name="bn_color6">#A34719</color>
+    <color name="bn_color7">#99FF66</color>
+    
+    
+    
+
+</resources>

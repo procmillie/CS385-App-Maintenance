@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<!--  Setting up the layout for the database view -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    	android:orientation="vertical"
+    	android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+    <HorizontalScrollView
+        android:id="@+id/horizontalScrollView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" >
+  
+
+    <TableLayout android:id="@+id/tableLayout1" 
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scrollbars="horizontal|vertical" >
+
+        <TableRow android:id="@+id/tableRow1">
+              <TextView  android:text="@string/serial_num" 	 android:layout_width="match_parent"   android:layout_height="match_parent"/>
+
+              <TextView  android:layout_width="match_parent"  android:layout_height="match_parent"  android:text="@string/equip_location" />
+
+              <TextView  android:text="@string/equip_name" 	 android:layout_width="match_parent"   android:layout_height="match_parent"/>
+
+              <TextView  android:text="@string/date_last" 	 android:layout_width="match_parent"   android:layout_height="match_parent"/>
+
+              <TextView  android:text="@string/date_due" 	 android:layout_width="match_parent"   android:layout_height="match_parent"/>
+            
+        </TableRow>
+       
+    </TableLayout>
+    
+     </HorizontalScrollView>
+
+    <TextView  android:text="@string/view_database"  android:id="@+id/tvFullDatabaseView" 
+        android:layout_width="fill_parent"   android:layout_height="fill_parent"/>
+
+</LinearLayout>
