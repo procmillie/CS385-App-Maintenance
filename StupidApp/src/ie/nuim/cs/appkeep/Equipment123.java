@@ -1,6 +1,8 @@
 package ie.nuim.cs.appkeep;
 
+import android.content.ContentValues;
 import android.content.Context;
+import android.database.SQLException;
 import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteDatabase.CursorFactory;
 import android.database.sqlite.SQLiteOpenHelper;
@@ -10,6 +12,7 @@ import android.database.sqlite.SQLiteOpenHelper;
 public class Equipment123 {
 	
 	//setting up database variables (final as they will not be changing)
+	
 	public static final String KEY_SERIAL_NUM = "_id";
 	public static final String KEY_EQUIP_NAME = "equipment_name";
 	public static final String KEY_LOCATION = "location";
@@ -52,7 +55,7 @@ public class Equipment123 {
 			// TODO Auto-generated method stub
 			//Creating our database according to our column headings, ie. input variables
 			//Serial number is the primary key and we are saying that we want all fields to have an input, ie. not null
-			db.execSQL("CREATETABLE "+ DATABASE_TABLE + " (" +
+			db.execSQL("CREATE TABLE "+ DATABASE_TABLE + " (" +
 					KEY_SERIAL_NUM + " TEXT PRIMARY KEY, " +
 					KEY_EQUIP_NAME + " TEXT NOT NULL, " +
 					KEY_LOCATION + " TEXT NOT NULL, " +
@@ -84,7 +87,7 @@ public class Equipment123 {
 	}
 	
 	//method to open the database through the dbHelper
-	public Equipment123 open(){
+	public Equipment123 open()throws SQLException {
 		//Creating an instance of the dbHelper. Class constructor takes in a Context
 		appKeepHelper = new DbHelper(appKeepContext);
 		//Creating an instance of the SQLiteDatabase
@@ -98,9 +101,29 @@ public class Equipment123 {
 		appKeepHelper.close();
 	}
 
-	public void createEntry(String serialNum, String name, String location) {
+	//when we write to our database, we want to write the return from this method
+	//ie it will insert into our database, the contentValues that we will set up in this method
+	public long createEntry(String serialNum, String name, String location) {
 		// TODO Auto-generated method stub
 		
+		ContentValues cv = new ContentValues();
+		
+		//putting each of our strings into the instance of the contentValues
+		cv.put(KEY_SERIAL_NUM, serialNum);
+		cv.put(KEY_EQUIP_NAME, name);
+		cv.put(KEY_LOCATION, location);
+		
+		//this line will insert all the above puts into the database table using contentValues cv
+		return appKeepDatabase.insert(DATABASE_TABLE, null, cv);
+		
+	}
+	
+	//Returning data from the database in the form of a String
+	public String getData() {
+		// TODO Auto-generated method stub
+		//makes a string array out of our database columnsh
+		String [] columns = new String [] {KEY_SERIAL_NUM, KEY_EQUIP_NAME, KEY_LOCATION};
+		return null;
 	}
 
 }

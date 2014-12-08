@@ -6,13 +6,15 @@
 
     <uses-sdk
         android:minSdkVersion="8"
-        android:targetSdkVersion="21" />
+        android:targetSdkVersion="8" />
 
     <application
         android:allowBackup="true"
         android:icon="@drawable/ic_launcher"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
+        
+        <!--  For the Database Homescreen Activity (Database_Home123.java)-->
         <activity
             android:name=".Database_Home123"
             android:label="@string/app_name" >
@@ -20,6 +22,17 @@
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        
+        <!-- For the Database View Activity (Database_View123.java) -->
+        <activity
+            android:name=".Database_View123"
+            android:label="@string/app_name" >
+            <intent-filter>
+                <action android:name="ie.nuim.cs.appkeep.DATABASE_VIEW123" />
+
+                <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </activity>
     </application>

@@ -20,6 +20,10 @@
     
     <string name="view_database">View Database</string>
     
+    <!--  Manifest String names -->
+    <string name="database_homescreen">Database Homescreen</string>
+    <string name="database_view">Database View</string>
+    
     
     <!--  Button strings to input and edit database entries. Colors used: 
     #FF9147 - pale gold

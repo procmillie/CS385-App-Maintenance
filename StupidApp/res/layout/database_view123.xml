@@ -39,7 +39,7 @@
     
      </HorizontalScrollView>
 
-    <TextView  android:text="@string/view_database"  android:id="@+id/tvFullDatabaseView" 
+    <TextView  android:text="@string/view_database"  android:id="@+id/tv_full_database_view" 
         android:layout_width="fill_parent"   android:layout_height="fill_parent"/>
 
 </LinearLayout>

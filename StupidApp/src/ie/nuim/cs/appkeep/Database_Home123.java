@@ -1,12 +1,15 @@
 package ie.nuim.cs.appkeep;
 
 import android.support.v7.app.ActionBarActivity;
+import android.app.Dialog;
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class Database_Home123 extends ActionBarActivity {
@@ -35,13 +38,34 @@ public class Database_Home123 extends ActionBarActivity {
 		 reminder = (Button) findViewById(R.id.bn_db_set_reminder);
 		 
 	
-		//setting up an onClickListener for the create button
+	     //setting up an onClickListener for the create button
+		 /*When you hit update, it gets the text and assigns the text to a string variable
+		  * We create an instance of the Equipment123 class, pass in the context of 'this'
+		  * This gets passed into the constructor for the Equipment123 class in Equipment123.java file
+		  * The context that gets created in this constructor class gets used in the database open() method where
+		  * the database helper class (dbHelper) gets instantiated.
+		  * 
+		  * From there, the dbHelper will create the database using the super class SQLiteOpenHelper and the onCreate() method
+		  * where an SQLiteDatabase object is passed in and the attributes or 'columns' of the database are set up with SQL code
+		  * 
+		  * If a database has already been created, the program goes to the onUpgrade() method in the same class, drops the existing
+		  * database and re-creates it using the createEntry() method in the same, Equipment123 class. Here, the strings from the 
+		  * Database_Home123.java file are passed in.
+		  * 
+		  * Database is created using more SQL code and then the database is closed with the .close() method
+		  * 
+		  */
 	        create.setOnClickListener(new View.OnClickListener() {
 				
 				@Override
 				public void onClick(View arg0) {
 					// TODO Auto-generated method stub
 					
+					
+					//catch exception to make sure that the createEntry into the database works
+					boolean entryCheck = true;
+					
+					try{
 					//strings to take the input from our user in the database homescreen
 					String serialNum = sqlSerialNum.getText().toString();
 					String name = sqlName.getText().toString();
@@ -58,6 +82,30 @@ public class Database_Home123 extends ActionBarActivity {
 					
 					//close database
 					input.close();
+					}catch (Exception e){
+						//if the thing doesn't work, we want to show a dialogue
+						entryCheck = false;
+						//set up a dialog to show the user the entry was unsuccessful
+						Dialog d = new Dialog(Database_Home123.this);
+						
+						d.setTitle("Update");
+						TextView tv = new TextView(Database_Home123.this);
+						tv.setText("Unsuccessful");
+						d.setContentView(tv);
+						d.show();
+					}finally{
+						//print this if it works ok
+						if(entryCheck){
+							/*//set up a dialog to show the user the entry was successful
+							Dialog d = new Dialog(Database_Home123.this);
+							d.setTitle("Update");
+							TextView tv = new TextView(Database_Home123.this);
+							tv.setText("Successfully added");
+							d.setContentView(tv);
+							d.show();*/
+						}
+						
+					}
 					
 					
 					//add a toast to say updated
@@ -72,7 +120,9 @@ public class Database_Home123 extends ActionBarActivity {
 				@Override
 				public void onClick(View v) {
 					// TODO Auto-generated method stub
-					
+					//intention to open up the SQL activity where we can view the full database
+					Intent i = new Intent("ie.nuim.cs.appkeep.DATABASE_VIEW123");
+					startActivity(i);
 					
 				}
 			});
